@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             curFragment = fragment_service_center;
             toolbar.setTitle("고객센터");
         } else if (position == 3) {
-            curFragment = fragment_service_center;
+            curFragment = fragment_login;
             toolbar.setTitle("로그인");
         }else if (position == 4) {
             curFragment = fragment_delivery;
