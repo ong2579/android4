@@ -13,7 +13,8 @@ import androidx.fragment.app.Fragment;
 
 import org.techtown.android4.databinding.FragmentGalleryBinding;
 
-public class FragmentCommunityRegister extends AppCompatActivity implements View.OnClickListener {
+//public class FragmentCommunityRegister extends AppCompatActivity implements View.OnClickListener {
+public class FragmentCommunityRegister extends Fragment implements View.OnClickListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -32,14 +33,23 @@ public class FragmentCommunityRegister extends AppCompatActivity implements View
             case R.id.reg_button:
 //                버튼 클릭시 아래 구현이 실행된다.
                 System.out.println("InputRecord clicked");
-                Intent myintent=new Intent(FragmentCommunityRegister.this, FragmentCommunity.class);
+                getActivity().startActivity(new Intent(getActivity(), FragmentCommunity.class));
                 break;
         }
 
+        public void onClickHandler (View v){
+
+            Intent intent = new Intent(this, FragmentCommunity.class);
+
+            intent.putExtra("title", "배달나눔원합니다.");
+            intent.putExtra("content", )
+
+            startActivity(intent);
+        }
     }
 }
-
-
+//
+//
 //public class FragmentCommunityRegister extends AppCompatActivity {
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +57,7 @@ public class FragmentCommunityRegister extends AppCompatActivity implements View
 //        setContentView(R.layout.activity_fragment_community_register);
 //    }
 //}
-//
+
 
 
 //public class FragmentCommunityRegister extends Fragment implements View.OnClickListener{

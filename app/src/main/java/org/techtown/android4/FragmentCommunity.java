@@ -6,13 +6,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import java.util.ArrayList;
+
 public class FragmentCommunity extends Fragment implements View.OnClickListener{
 //1) implement View.OnClickListener를 사용 - 좀더 보기 편하다. 클릭관련 다 모여있어서
 //2) imageButton.setOnClickListener를 사용해서 그 자리에서 사용하냐 - 코드가 난잡해질 수 있음. 버튼이 여러개일 경우
+
+    private TextView textView_title;
+    private TextView textView_content;
 
     @Nullable
     @Override
@@ -22,6 +28,24 @@ public class FragmentCommunity extends Fragment implements View.OnClickListener{
         b.setOnClickListener(this);
 
         return rootView;
+
+        Intent intent = Intent.getIntent();
+
+        textView_title = (TextView)findViewById(R.id.title);
+        textView_content
+                (TextView)findViewById(R.id.content);
+
+        textView_title.setText(intent.getStringExtra("title"));
+        ArrayList<String> content intent.getStringArrayListExtra("content");
+
+        textView_content.setText("");
+
+        for(int i=0, i < content.size(); i++)
+        {
+
+            textView_content.setText(textView_content.getText() content.get(i));
+        }
+
     }
 
     @Override
