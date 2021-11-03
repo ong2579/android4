@@ -12,6 +12,7 @@ import android.view.View;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -46,10 +47,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawer;
     Toolbar toolbar;
 
+    private FragmentManager fragmentManager;
+    private Fragment[] fragments;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = (FragmentManager)getSupportFragmentManager();
+//배열을 만든다
+        fragments = new Fragment[7];
+        fragments[4] = new FragmentCommunityRegister();
+        fragments[3] = new FragmentCommunity();
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +88,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getSupportFragmentManager().beginTransaction().add(R.id.container,fragment_notice).commit();
 
 
+    }
+
+    public void FragmentChange(int idx){
+        if(idx >=0 && idx <5){
+            fragmentManager.beginTransaction().replace(R.id.container, fragments[idx]).commit();
+        }
     }
 
     @Override
