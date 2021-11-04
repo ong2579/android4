@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         fragmentManager = (FragmentManager)getSupportFragmentManager();
 //배열을 만든다
-        fragments = new Fragment[7];
+        fragments = new Fragment[8];
         fragments[4] = new FragmentCommunityRegister();
         fragments[3] = new FragmentCommunity();
+        fragments[7] = new FragmentJoin();
 
 
         toolbar = findViewById(R.id.toolbar);
@@ -163,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             toolbar.setTitle("커뮤니티");
         } else if (position == 6) {
             curFragment = fragment_exchange;
-            toolbar.setTitle("물물교환");
+            toolbar.setTitle("혼자배달");
         }
 
 

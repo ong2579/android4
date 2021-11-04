@@ -6,20 +6,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/menu1"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/notification"
             android:title="공지사항" />
         <item
             android:id="@+id/menu2"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/event"
             android:title="이벤트" />
         <item
             android:id="@+id/menu3"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/service"
             android:title="고객센터"/>
 
         <item
             android:id="@+id/menu4"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/enter"
             android:title="로그인"/>
     </group>
 </menu>

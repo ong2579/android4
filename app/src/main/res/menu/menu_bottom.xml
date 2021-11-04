@@ -7,7 +7,7 @@
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@android:drawable/ic_dialog_map"
-        android:title="배달쉐어링" />
+        android:title="함께배달" />
     <item
         android:id="@+id/tab2"
         app:showAsAction="ifRoom"
@@ -18,6 +18,6 @@
         app:showAsAction="ifRoom"
         android:enabled="true"
         android:icon="@android:drawable/ic_dialog_email"
-        android:title="물물교환" />
+        android:title="혼자배달" />
 
 </menu>
